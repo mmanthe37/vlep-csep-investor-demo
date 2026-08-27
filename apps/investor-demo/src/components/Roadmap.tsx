@@ -1,7 +1,7 @@
 import { ArrowRight, Check, Circle, FlaskConical, Landmark, PackageOpen } from "lucide-react";
 
 const horizons = [
-  ["Now · Investor MVP", PackageOpen, ["Public synthetic demo", "Transparent repository", "Continuous integration", "Architecture + validation docs"]],
+  ["Now · Investor MVP", PackageOpen, ["Public synthetic demo", "Transparent repository", "CI workflow definitions", "Architecture + validation docs"]],
   ["Next · Research Beta", FlaskConical, ["Formal mapping registry", "Simulation harness", "Reviewer workflow", "De-identified integration sandbox"]],
   ["Later · Clinical Research", Landmark, ["Institutional partners", "Gold-standard labels", "Prospective validation", "Regulatory strategy"]],
 ] as const;
@@ -30,7 +30,7 @@ export function Roadmap({ onRun }: RoadmapProps) {
       <div className="final-cta">
         <h3>Inspect the working system</h3>
         <button className="button button-primary" type="button" onClick={onRun}>Run synthetic demo <ArrowRight size={17} /></button>
-        <a className="button button-secondary" href="https://github.com/mmanthe37" target="_blank" rel="noreferrer">View source on GitHub</a>
+        <a className="button button-secondary" href="https://github.com/mmanthe37/vlep-csep-investor-demo" target="_blank" rel="noreferrer">View source on GitHub</a>
       </div>
     </section>
   );
