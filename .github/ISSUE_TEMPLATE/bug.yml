@@ -1,0 +1,31 @@
+name: Software defect
+description: Report reproducible behavior in the synthetic research MVP.
+title: "bug: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include patient data or other protected health information.
+  - type: checkboxes
+    attributes:
+      label: Data safety
+      options:
+        - label: I confirm this report contains synthetic or de-identified test data only.
+          required: true
+  - type: textarea
+    attributes:
+      label: Reproduction
+      description: Include the command, synthetic fixture, and observed output.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Commit SHA
+      placeholder: 40-character Git commit
+    validations:
+      required: true

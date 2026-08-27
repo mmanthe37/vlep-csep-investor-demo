@@ -1,0 +1,70 @@
+name: Investor MVP CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  research-core:
+    name: Research core
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run deterministic MVP tests
+        run: python -m unittest discover -s tests_mvp -v
+      - name: Rebuild investor demo bundle
+        run: python scripts/export_investor_demo.py
+      - name: Sync published governance documents
+        run: |
+          mkdir -p apps/investor-demo/public/docs
+          cp docs/RESEARCH_DISCLAIMER.md docs/MODEL_CARD.md docs/DATA_CARD.md apps/investor-demo/public/docs/
+          cp SECURITY.md apps/investor-demo/public/
+      - name: Verify committed public assets are reproducible
+        run: git diff --exit-code -- apps/investor-demo/public/demo-bundle.json apps/investor-demo/public/docs apps/investor-demo/public/SECURITY.md
+
+  investor-site:
+    name: Investor site
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/investor-demo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/investor-demo/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: investor-site
+          path: apps/investor-demo/dist
+          if-no-files-found: error
+
+  dependency-review:
+    name: Dependency review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high

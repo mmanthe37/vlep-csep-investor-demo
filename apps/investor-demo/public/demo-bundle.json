@@ -1,0 +1,844 @@
+{
+  "bundle_hash": "2d5bd415031623f9edae400e4212f708a94b61283fce2dbc05ad4fb3ced5f4a2",
+  "case": {
+    "as_of_time": "2026-08-27T14:22:31Z",
+    "case_id": "SYN-0042",
+    "description": "Fictional, de-identified-style fixture created solely to demonstrate deterministic software behavior.",
+    "evidence": [
+      {
+        "domain": "clinical_note",
+        "evidence_id": "EVT-SYN-1001",
+        "observed_at": "2026-08-20T08:14:00Z",
+        "raw_text": "Episodes of déjà vu followed by impaired awareness. Temporal lobe epilepsy documented. Depressive symptoms reported.",
+        "source_confidence": 0.94,
+        "source_reference": "Synthetic clinical note N-88217"
+      },
+      {
+        "domain": "eeg",
+        "evidence_id": "EVT-SYN-1002",
+        "observed_at": "2026-08-20T09:02:00Z",
+        "raw_text": "Left temporal sharp waves observed in the synthetic EEG fixture.",
+        "source_confidence": 0.95,
+        "source_reference": "Synthetic EEG study EEG-9912"
+      },
+      {
+        "domain": "imaging",
+        "evidence_id": "EVT-SYN-1003",
+        "observed_at": "2026-08-20T10:31:00Z",
+        "raw_text": "Left mesial temporal sclerosis in the synthetic MRI fixture.",
+        "source_confidence": 0.93,
+        "source_reference": "Synthetic MRI study MRI-7713"
+      },
+      {
+        "domain": "medication",
+        "evidence_id": "EVT-SYN-1004",
+        "observed_at": "2026-08-21T14:05:00Z",
+        "raw_text": "Levetiracetam treatment trial recorded; response not established.",
+        "source_confidence": 0.9,
+        "source_reference": "Synthetic medication record RX-22819"
+      },
+      {
+        "domain": "patient_diary",
+        "evidence_id": "EVT-SYN-1005",
+        "observed_at": "2026-08-22T20:47:00Z",
+        "raw_text": "Two episodes with déjà vu and impaired awareness were entered in the synthetic diary.",
+        "source_confidence": 0.82,
+        "source_reference": "Synthetic diary entry D-33116"
+      }
+    ],
+    "fixture_type": "synthetic",
+    "fixture_version": "1.0.0"
+  },
+  "frameworks": {
+    "ILAE-2017": {
+      "label": "ILAE 2017",
+      "source": "https://www.ilae.org/guidelines/definition-and-classification/operational-classification-2017"
+    },
+    "ILAE-2025": {
+      "label": "ILAE 2025",
+      "source": "https://www.ilae.org/updated-classification-epileptic-seizures-2025"
+    }
+  },
+  "generated_from": "bundled deterministic synthetic fixture",
+  "product": "VLEP Research MVP",
+  "research_only": true,
+  "runs": {
+    "ILAE-2017": {
+      "as_of_time": "2026-08-27T14:22:31Z",
+      "assertions": [
+        {
+          "assertion_id": "AST-4BB1389CFA6D",
+          "demo_score": 0.8742,
+          "dimension": "biomarkers",
+          "internal_code": "BIO:EEG-LT-SHARP",
+          "label": "Left temporal epileptiform activity",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1002"
+          ]
+        },
+        {
+          "assertion_id": "AST-96AAE146C7B6",
+          "demo_score": 0.8649,
+          "dimension": "biomarkers",
+          "internal_code": "BIO:MTS-LEFT",
+          "label": "Left mesial temporal sclerosis",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1003"
+          ]
+        },
+        {
+          "assertion_id": "AST-8A04443DBE61",
+          "demo_score": 0.6425,
+          "dimension": "comorbidity",
+          "internal_code": "COMORB:DEP-REPORTED",
+          "label": "Depressive symptoms (reported)",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001"
+          ]
+        },
+        {
+          "assertion_id": "AST-1D3E2D020F4F",
+          "demo_score": 0.8201,
+          "dimension": "etiology",
+          "internal_code": "ETIO:STRUCTURAL",
+          "label": "Structural etiology",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1003"
+          ]
+        },
+        {
+          "assertion_id": "AST-854964B07B5B",
+          "demo_score": 0.6781,
+          "dimension": "seizure",
+          "internal_code": "SEIZ:FIA",
+          "label": "Focal impaired awareness seizure",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001",
+            "EVT-SYN-1005"
+          ]
+        },
+        {
+          "assertion_id": "AST-B00A3FAD1293",
+          "demo_score": 0.6941,
+          "dimension": "syndrome",
+          "internal_code": "SYN:TLE",
+          "label": "Temporal lobe epilepsy",
+          "review_required": true,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001"
+          ]
+        },
+        {
+          "assertion_id": "AST-B0882C4F4593",
+          "demo_score": 0.6436,
+          "dimension": "treatment",
+          "internal_code": "TX:LEVETIRACETAM-TRIAL",
+          "label": "Levetiracetam trial",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1004"
+          ]
+        }
+      ],
+      "case_id": "SYN-0042",
+      "deterministic_seed": "c14424a157749f4a883f6068b71b95038841766f11b72a8b5b3a2fd8dcca78f3",
+      "engine_version": "0.3.0-research",
+      "fixture_type": "synthetic",
+      "framework": "ILAE-2017",
+      "ledger": [
+        {
+          "concepts": [
+            {
+              "confidence": 0.7941,
+              "dimension": "seizure",
+              "display": "Focal impaired awareness seizure",
+              "internal_code": "SEIZ:FIA",
+              "normalization_rule": "focal-impaired-awareness-phrase"
+            },
+            {
+              "confidence": 0.6948,
+              "dimension": "syndrome",
+              "display": "Temporal lobe epilepsy",
+              "internal_code": "SYN:TLE",
+              "normalization_rule": "temporal-lobe-syndrome-phrase"
+            },
+            {
+              "confidence": 0.6452,
+              "dimension": "comorbidity",
+              "display": "Depressive symptoms (reported)",
+              "internal_code": "COMORB:DEP-REPORTED",
+              "normalization_rule": "reported-depressive-symptoms"
+            }
+          ],
+          "domain": "clinical_note",
+          "event_id": "EVT-SYN-1001",
+          "hash_prev": "GENESIS",
+          "hash_self": "d995d0d6fa792062b149d7ce79f4058bdb6977f3078a2bb99a78be9bcac57fe9",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T08:14:00Z",
+          "raw_text": "Episodes of déjà vu followed by impaired awareness. Temporal lobe epilepsy documented. Depressive symptoms reported.",
+          "seq": 1,
+          "source_confidence": 0.94,
+          "source_reference": "Synthetic clinical note N-88217"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.8751,
+              "dimension": "biomarkers",
+              "display": "Left temporal epileptiform activity",
+              "internal_code": "BIO:EEG-LT-SHARP",
+              "normalization_rule": "left-temporal-sharp-waves"
+            }
+          ],
+          "domain": "eeg",
+          "event_id": "EVT-SYN-1002",
+          "hash_prev": "d995d0d6fa792062b149d7ce79f4058bdb6977f3078a2bb99a78be9bcac57fe9",
+          "hash_self": "a9be31167c2b938c5b9fa5c15963ccbed25eb769296bbb3a2abdedb726f5a246",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T09:02:00Z",
+          "raw_text": "Left temporal sharp waves observed in the synthetic EEG fixture.",
+          "seq": 2,
+          "source_confidence": 0.95,
+          "source_reference": "Synthetic EEG study EEG-9912"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.8658,
+              "dimension": "biomarkers",
+              "display": "Left mesial temporal sclerosis",
+              "internal_code": "BIO:MTS-LEFT",
+              "normalization_rule": "left-mesial-temporal-sclerosis"
+            },
+            {
+              "confidence": 0.8203,
+              "dimension": "etiology",
+              "display": "Structural etiology",
+              "internal_code": "ETIO:STRUCTURAL",
+              "normalization_rule": "structural-etiology-from-mts"
+            }
+          ],
+          "domain": "imaging",
+          "event_id": "EVT-SYN-1003",
+          "hash_prev": "a9be31167c2b938c5b9fa5c15963ccbed25eb769296bbb3a2abdedb726f5a246",
+          "hash_self": "73176ccdb7fda54d13a648206ac5b48401cb0f59534dd9b93b3c1b346295e0a8",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T10:31:00Z",
+          "raw_text": "Left mesial temporal sclerosis in the synthetic MRI fixture.",
+          "seq": 3,
+          "source_confidence": 0.93,
+          "source_reference": "Synthetic MRI study MRI-7713"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.648,
+              "dimension": "treatment",
+              "display": "Levetiracetam trial",
+              "internal_code": "TX:LEVETIRACETAM-TRIAL",
+              "normalization_rule": "levetiracetam-trial"
+            }
+          ],
+          "domain": "medication",
+          "event_id": "EVT-SYN-1004",
+          "hash_prev": "73176ccdb7fda54d13a648206ac5b48401cb0f59534dd9b93b3c1b346295e0a8",
+          "hash_self": "605541721a756d79a578e4ab12d1de6e51e64ac4367fa48a1cc7bf509082cdf7",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-21T14:05:00Z",
+          "raw_text": "Levetiracetam treatment trial recorded; response not established.",
+          "seq": 4,
+          "source_confidence": 0.9,
+          "source_reference": "Synthetic medication record RX-22819"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.5668,
+              "dimension": "seizure",
+              "display": "Focal impaired awareness seizure",
+              "internal_code": "SEIZ:FIA",
+              "normalization_rule": "focal-impaired-awareness-phrase"
+            }
+          ],
+          "domain": "patient_diary",
+          "event_id": "EVT-SYN-1005",
+          "hash_prev": "605541721a756d79a578e4ab12d1de6e51e64ac4367fa48a1cc7bf509082cdf7",
+          "hash_self": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-22T20:47:00Z",
+          "raw_text": "Two episodes with déjà vu and impaired awareness were entered in the synthetic diary.",
+          "seq": 5,
+          "source_confidence": 0.82,
+          "source_reference": "Synthetic diary entry D-33116"
+        }
+      ],
+      "ledger_head": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+      "ledger_verified": true,
+      "limitations": [
+        "Synthetic fixture only; no PHI is accepted or processed.",
+        "Scores are deterministic demo outputs, not calibrated clinical probabilities.",
+        "Terminology reinterpretation can require expert review and is not assumed lossless.",
+        "This run does not establish diagnostic validity, clinical utility, or patient safety."
+      ],
+      "mappings": [],
+      "profile": {
+        "as_of_time": "2026-08-27T14:22:31Z",
+        "case_id": "SYN-0042",
+        "clinical_use": false,
+        "dimensions": [
+          {
+            "demo_score": 0.6781,
+            "dimension": "seizure",
+            "internal_codes": [
+              "SEIZ:FIA"
+            ],
+            "label": "Focal impaired awareness seizure",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1001",
+              "EVT-SYN-1005"
+            ]
+          },
+          {
+            "demo_score": 0.8201,
+            "dimension": "etiology",
+            "internal_codes": [
+              "ETIO:STRUCTURAL"
+            ],
+            "label": "Structural etiology",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1003"
+            ]
+          },
+          {
+            "demo_score": 0.6941,
+            "dimension": "syndrome",
+            "internal_codes": [
+              "SYN:TLE"
+            ],
+            "label": "Temporal lobe epilepsy",
+            "review_required": true,
+            "supporting_event_ids": [
+              "EVT-SYN-1001"
+            ]
+          },
+          {
+            "demo_score": 0.8696,
+            "dimension": "biomarkers",
+            "internal_codes": [
+              "BIO:EEG-LT-SHARP",
+              "BIO:MTS-LEFT"
+            ],
+            "label": "Left temporal epileptiform activity; Left mesial temporal sclerosis",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1002",
+              "EVT-SYN-1003"
+            ]
+          },
+          {
+            "demo_score": 0.6425,
+            "dimension": "comorbidity",
+            "internal_codes": [
+              "COMORB:DEP-REPORTED"
+            ],
+            "label": "Depressive symptoms (reported)",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1001"
+            ]
+          },
+          {
+            "demo_score": 0.6436,
+            "dimension": "treatment",
+            "internal_codes": [
+              "TX:LEVETIRACETAM-TRIAL"
+            ],
+            "label": "Levetiracetam trial",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1004"
+            ]
+          }
+        ],
+        "framework": "ILAE-2017",
+        "framework_label": "ILAE 2017",
+        "integrity": "verified",
+        "ledger_head": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+        "mappings": [],
+        "profile_hash": "1a47cfe63e898c853b70183b9d2ac7fb5dcf8a9d174b867daffc02c88e08cf32",
+        "profile_id": "CSEP-1A47CFE63E89",
+        "resolution_status": {
+          "resolved": 5,
+          "review_required": 1
+        },
+        "score_notice": "Synthetic demo scores; not calibrated clinical probabilities."
+      },
+      "run_hash": "579d1643d2751aedad31a9b1cfc4949a723fd0d45eca220717df14270afb2c8c",
+      "run_id": "RUN-579D1643D2751AED",
+      "stages": [
+        {
+          "name": "Ingest",
+          "number": 1,
+          "output": "5 synthetic observations",
+          "status": "complete"
+        },
+        {
+          "name": "Normalize",
+          "number": 2,
+          "output": "8 canonical concepts",
+          "status": "complete"
+        },
+        {
+          "name": "Ledger",
+          "number": 3,
+          "output": "5 hash-chained events",
+          "status": "complete"
+        },
+        {
+          "name": "Assert",
+          "number": 4,
+          "output": "7 evidence-linked assertions",
+          "status": "complete"
+        },
+        {
+          "name": "Model",
+          "number": 5,
+          "output": "Deterministic research scoring",
+          "status": "complete"
+        },
+        {
+          "name": "Resolve",
+          "number": 6,
+          "output": "CSEP under ILAE 2017",
+          "status": "complete"
+        }
+      ]
+    },
+    "ILAE-2025": {
+      "as_of_time": "2026-08-27T14:22:31Z",
+      "assertions": [
+        {
+          "assertion_id": "AST-4BB1389CFA6D",
+          "demo_score": 0.8742,
+          "dimension": "biomarkers",
+          "internal_code": "BIO:EEG-LT-SHARP",
+          "label": "Left temporal epileptiform activity",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1002"
+          ]
+        },
+        {
+          "assertion_id": "AST-96AAE146C7B6",
+          "demo_score": 0.8649,
+          "dimension": "biomarkers",
+          "internal_code": "BIO:MTS-LEFT",
+          "label": "Left mesial temporal sclerosis",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1003"
+          ]
+        },
+        {
+          "assertion_id": "AST-8A04443DBE61",
+          "demo_score": 0.6425,
+          "dimension": "comorbidity",
+          "internal_code": "COMORB:DEP-REPORTED",
+          "label": "Depressive symptoms (reported)",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001"
+          ]
+        },
+        {
+          "assertion_id": "AST-1D3E2D020F4F",
+          "demo_score": 0.8201,
+          "dimension": "etiology",
+          "internal_code": "ETIO:STRUCTURAL",
+          "label": "Structural etiology",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1003"
+          ]
+        },
+        {
+          "assertion_id": "AST-854964B07B5B",
+          "demo_score": 0.6781,
+          "dimension": "seizure",
+          "internal_code": "SEIZ:FIA",
+          "label": "Focal impaired awareness seizure",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001",
+            "EVT-SYN-1005"
+          ]
+        },
+        {
+          "assertion_id": "AST-B00A3FAD1293",
+          "demo_score": 0.6941,
+          "dimension": "syndrome",
+          "internal_code": "SYN:TLE",
+          "label": "Temporal lobe epilepsy",
+          "review_required": true,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1001"
+          ]
+        },
+        {
+          "assertion_id": "AST-B0882C4F4593",
+          "demo_score": 0.6436,
+          "dimension": "treatment",
+          "internal_code": "TX:LEVETIRACETAM-TRIAL",
+          "label": "Levetiracetam trial",
+          "review_required": false,
+          "scoring_method": "source reliability × rule confidence × temporal half-life",
+          "supporting_event_ids": [
+            "EVT-SYN-1004"
+          ]
+        }
+      ],
+      "case_id": "SYN-0042",
+      "deterministic_seed": "c14424a157749f4a883f6068b71b95038841766f11b72a8b5b3a2fd8dcca78f3",
+      "engine_version": "0.3.0-research",
+      "fixture_type": "synthetic",
+      "framework": "ILAE-2025",
+      "ledger": [
+        {
+          "concepts": [
+            {
+              "confidence": 0.7941,
+              "dimension": "seizure",
+              "display": "Focal impaired awareness seizure",
+              "internal_code": "SEIZ:FIA",
+              "normalization_rule": "focal-impaired-awareness-phrase"
+            },
+            {
+              "confidence": 0.6948,
+              "dimension": "syndrome",
+              "display": "Temporal lobe epilepsy",
+              "internal_code": "SYN:TLE",
+              "normalization_rule": "temporal-lobe-syndrome-phrase"
+            },
+            {
+              "confidence": 0.6452,
+              "dimension": "comorbidity",
+              "display": "Depressive symptoms (reported)",
+              "internal_code": "COMORB:DEP-REPORTED",
+              "normalization_rule": "reported-depressive-symptoms"
+            }
+          ],
+          "domain": "clinical_note",
+          "event_id": "EVT-SYN-1001",
+          "hash_prev": "GENESIS",
+          "hash_self": "d995d0d6fa792062b149d7ce79f4058bdb6977f3078a2bb99a78be9bcac57fe9",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T08:14:00Z",
+          "raw_text": "Episodes of déjà vu followed by impaired awareness. Temporal lobe epilepsy documented. Depressive symptoms reported.",
+          "seq": 1,
+          "source_confidence": 0.94,
+          "source_reference": "Synthetic clinical note N-88217"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.8751,
+              "dimension": "biomarkers",
+              "display": "Left temporal epileptiform activity",
+              "internal_code": "BIO:EEG-LT-SHARP",
+              "normalization_rule": "left-temporal-sharp-waves"
+            }
+          ],
+          "domain": "eeg",
+          "event_id": "EVT-SYN-1002",
+          "hash_prev": "d995d0d6fa792062b149d7ce79f4058bdb6977f3078a2bb99a78be9bcac57fe9",
+          "hash_self": "a9be31167c2b938c5b9fa5c15963ccbed25eb769296bbb3a2abdedb726f5a246",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T09:02:00Z",
+          "raw_text": "Left temporal sharp waves observed in the synthetic EEG fixture.",
+          "seq": 2,
+          "source_confidence": 0.95,
+          "source_reference": "Synthetic EEG study EEG-9912"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.8658,
+              "dimension": "biomarkers",
+              "display": "Left mesial temporal sclerosis",
+              "internal_code": "BIO:MTS-LEFT",
+              "normalization_rule": "left-mesial-temporal-sclerosis"
+            },
+            {
+              "confidence": 0.8203,
+              "dimension": "etiology",
+              "display": "Structural etiology",
+              "internal_code": "ETIO:STRUCTURAL",
+              "normalization_rule": "structural-etiology-from-mts"
+            }
+          ],
+          "domain": "imaging",
+          "event_id": "EVT-SYN-1003",
+          "hash_prev": "a9be31167c2b938c5b9fa5c15963ccbed25eb769296bbb3a2abdedb726f5a246",
+          "hash_self": "73176ccdb7fda54d13a648206ac5b48401cb0f59534dd9b93b3c1b346295e0a8",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-20T10:31:00Z",
+          "raw_text": "Left mesial temporal sclerosis in the synthetic MRI fixture.",
+          "seq": 3,
+          "source_confidence": 0.93,
+          "source_reference": "Synthetic MRI study MRI-7713"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.648,
+              "dimension": "treatment",
+              "display": "Levetiracetam trial",
+              "internal_code": "TX:LEVETIRACETAM-TRIAL",
+              "normalization_rule": "levetiracetam-trial"
+            }
+          ],
+          "domain": "medication",
+          "event_id": "EVT-SYN-1004",
+          "hash_prev": "73176ccdb7fda54d13a648206ac5b48401cb0f59534dd9b93b3c1b346295e0a8",
+          "hash_self": "605541721a756d79a578e4ab12d1de6e51e64ac4367fa48a1cc7bf509082cdf7",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-21T14:05:00Z",
+          "raw_text": "Levetiracetam treatment trial recorded; response not established.",
+          "seq": 4,
+          "source_confidence": 0.9,
+          "source_reference": "Synthetic medication record RX-22819"
+        },
+        {
+          "concepts": [
+            {
+              "confidence": 0.5668,
+              "dimension": "seizure",
+              "display": "Focal impaired awareness seizure",
+              "internal_code": "SEIZ:FIA",
+              "normalization_rule": "focal-impaired-awareness-phrase"
+            }
+          ],
+          "domain": "patient_diary",
+          "event_id": "EVT-SYN-1005",
+          "hash_prev": "605541721a756d79a578e4ab12d1de6e51e64ac4367fa48a1cc7bf509082cdf7",
+          "hash_self": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+          "integrity": "verified",
+          "normalization_status": "mapped",
+          "observed_at": "2026-08-22T20:47:00Z",
+          "raw_text": "Two episodes with déjà vu and impaired awareness were entered in the synthetic diary.",
+          "seq": 5,
+          "source_confidence": 0.82,
+          "source_reference": "Synthetic diary entry D-33116"
+        }
+      ],
+      "ledger_head": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+      "ledger_verified": true,
+      "limitations": [
+        "Synthetic fixture only; no PHI is accepted or processed.",
+        "Scores are deterministic demo outputs, not calibrated clinical probabilities.",
+        "Terminology reinterpretation can require expert review and is not assumed lossless.",
+        "This run does not establish diagnostic validity, clinical utility, or patient safety."
+      ],
+      "mappings": [
+        {
+          "internal_code": "SEIZ:FIA",
+          "mapping_id": "MAP-19D6DBDB1A4C",
+          "original_evidence_preserved": true,
+          "rationale": "ILAE 2025 replaces the awareness classifier with consciousness, defined using awareness and responsiveness; reviewer confirmation is required before accepting the reinterpretation.",
+          "source_framework": "ILAE-2017",
+          "source_term": "Focal impaired awareness seizure",
+          "status": "conditional",
+          "target_framework": "ILAE-2025",
+          "target_term": "Focal impaired consciousness seizure"
+        }
+      ],
+      "profile": {
+        "as_of_time": "2026-08-27T14:22:31Z",
+        "case_id": "SYN-0042",
+        "clinical_use": false,
+        "dimensions": [
+          {
+            "demo_score": 0.6781,
+            "dimension": "seizure",
+            "internal_codes": [
+              "SEIZ:FIA"
+            ],
+            "label": "Focal impaired consciousness seizure",
+            "review_required": true,
+            "supporting_event_ids": [
+              "EVT-SYN-1001",
+              "EVT-SYN-1005"
+            ]
+          },
+          {
+            "demo_score": 0.8201,
+            "dimension": "etiology",
+            "internal_codes": [
+              "ETIO:STRUCTURAL"
+            ],
+            "label": "Structural etiology",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1003"
+            ]
+          },
+          {
+            "demo_score": 0.6941,
+            "dimension": "syndrome",
+            "internal_codes": [
+              "SYN:TLE"
+            ],
+            "label": "Temporal lobe epilepsy",
+            "review_required": true,
+            "supporting_event_ids": [
+              "EVT-SYN-1001"
+            ]
+          },
+          {
+            "demo_score": 0.8696,
+            "dimension": "biomarkers",
+            "internal_codes": [
+              "BIO:EEG-LT-SHARP",
+              "BIO:MTS-LEFT"
+            ],
+            "label": "Left temporal epileptiform activity; Left mesial temporal sclerosis",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1002",
+              "EVT-SYN-1003"
+            ]
+          },
+          {
+            "demo_score": 0.6425,
+            "dimension": "comorbidity",
+            "internal_codes": [
+              "COMORB:DEP-REPORTED"
+            ],
+            "label": "Depressive symptoms (reported)",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1001"
+            ]
+          },
+          {
+            "demo_score": 0.6436,
+            "dimension": "treatment",
+            "internal_codes": [
+              "TX:LEVETIRACETAM-TRIAL"
+            ],
+            "label": "Levetiracetam trial",
+            "review_required": false,
+            "supporting_event_ids": [
+              "EVT-SYN-1004"
+            ]
+          }
+        ],
+        "framework": "ILAE-2025",
+        "framework_label": "ILAE 2025",
+        "integrity": "verified",
+        "ledger_head": "cbf8e846d7c58ad458634ade56931ca886b391972597b6ac9f55626c34e90e40",
+        "mappings": [
+          {
+            "internal_code": "SEIZ:FIA",
+            "mapping_id": "MAP-19D6DBDB1A4C",
+            "original_evidence_preserved": true,
+            "rationale": "ILAE 2025 replaces the awareness classifier with consciousness, defined using awareness and responsiveness; reviewer confirmation is required before accepting the reinterpretation.",
+            "source_framework": "ILAE-2017",
+            "source_term": "Focal impaired awareness seizure",
+            "status": "conditional",
+            "target_framework": "ILAE-2025",
+            "target_term": "Focal impaired consciousness seizure"
+          }
+        ],
+        "profile_hash": "87130d90c1cef542d7a77c6f9698f2b593ed432e11feb27ce00e50fd30cc2d35",
+        "profile_id": "CSEP-87130D90C1CE",
+        "resolution_status": {
+          "resolved": 4,
+          "review_required": 2
+        },
+        "score_notice": "Synthetic demo scores; not calibrated clinical probabilities."
+      },
+      "run_hash": "4af85b16c81da600f5e1bc105e29bff279fc2eee7cf91c9c07e886877797ca1a",
+      "run_id": "RUN-4AF85B16C81DA600",
+      "stages": [
+        {
+          "name": "Ingest",
+          "number": 1,
+          "output": "5 synthetic observations",
+          "status": "complete"
+        },
+        {
+          "name": "Normalize",
+          "number": 2,
+          "output": "8 canonical concepts",
+          "status": "complete"
+        },
+        {
+          "name": "Ledger",
+          "number": 3,
+          "output": "5 hash-chained events",
+          "status": "complete"
+        },
+        {
+          "name": "Assert",
+          "number": 4,
+          "output": "7 evidence-linked assertions",
+          "status": "complete"
+        },
+        {
+          "name": "Model",
+          "number": 5,
+          "output": "Deterministic research scoring",
+          "status": "complete"
+        },
+        {
+          "name": "Resolve",
+          "number": 6,
+          "output": "CSEP under ILAE 2025",
+          "status": "complete"
+        }
+      ]
+    }
+  },
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "title": "ILAE Operational Classification of Seizure Types (2017)",
+      "url": "https://www.ilae.org/guidelines/definition-and-classification/operational-classification-2017"
+    },
+    {
+      "title": "ILAE Updated Classification of Epileptic Seizures (2025)",
+      "url": "https://www.ilae.org/updated-classification-epileptic-seizures-2025"
+    }
+  ]
+}
