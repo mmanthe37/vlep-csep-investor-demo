@@ -71,9 +71,25 @@ export function Workbench({
   );
 
   const copyCaseId = async () => {
-    await navigator.clipboard.writeText(bundle.case.case_id);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1400);
+    let copySucceeded = false;
+    try {
+      await navigator.clipboard.writeText(bundle.case.case_id);
+      copySucceeded = true;
+    } catch {
+      const fallback = document.createElement("textarea");
+      fallback.value = bundle.case.case_id;
+      fallback.setAttribute("readonly", "");
+      fallback.style.position = "fixed";
+      fallback.style.opacity = "0";
+      document.body.appendChild(fallback);
+      fallback.select();
+      copySucceeded = document.execCommand("copy");
+      fallback.remove();
+    }
+    if (copySucceeded) {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1400);
+    }
   };
 
   return (
@@ -104,7 +120,7 @@ export function Workbench({
               <dt>Case ID (de-identified)</dt>
               <dd>
                 <code>{bundle.case.case_id}</code>
-                <button className="icon-button" type="button" onClick={copyCaseId} aria-label="Copy case ID">
+                <button className="icon-button" type="button" onClick={copyCaseId} aria-label={copied ? "Copied case ID" : "Copy case ID"}>
                   {copied ? <Check size={15} /> : <Clipboard size={15} />}
                 </button>
               </dd>
